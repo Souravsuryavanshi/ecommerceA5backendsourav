@@ -19,7 +19,7 @@ const limiter = rateLimit({
   ipv6Subnet: 56
 });
 app.use(limiter);
-app.use(helmet)
+app.use(helmet())
 app.use(express.json());
 app.use(cors())
 // MongoDB nnection
