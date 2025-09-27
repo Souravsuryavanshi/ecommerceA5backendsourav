@@ -27,14 +27,14 @@ app.use(cors());
 
 // ✅ MongoDB connection
 async function connection() {
-  const mongoURI = process.env.MONGODBURL;
-  if (!mongoURI) {
+  const MONGODBURL = process.env.MONGODBURL;
+  if (!MONGODBURL) {
     console.error("❌ MONGODBURL is not defined in environment variables!");
     process.exit(1);
   }
 
   try {
-    await mongoose.connect(mongoURI);
+    await mongoose.connect(MONGODBURL);
     console.log("✅ Connected to MongoDB");
   } catch (err) {
     console.error("❌ MongoDB connection error:", err.message);
