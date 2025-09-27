@@ -1,6 +1,7 @@
 // Import necessary modules
 const express = require('express');
 const mongoose = require('mongoose');
+const cors=require('cors')
 const bcrypt = require('bcrypt');
 const rateLimit = require('express-rate-limit');
 const helmet=require('helmet')
@@ -21,7 +22,7 @@ app.use(limiter);
 app.use(helmet)
 app.use(express.json());
 app.use(cors())
-// MongoDB connection
+// MongoDB nnection
 async function connection() {
   await mongoose.connect(process.env.MONGODBURL)
   console.log(process.env.MONGODBURL)
